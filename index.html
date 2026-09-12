@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="__SITE_LANGUAGE__" data-theme="__SITE_THEME__">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="__SITE_LOGO__" />
+    <link rel="apple-touch-icon" href="__SITE_LOGO__" />
+    <meta name="theme-color" content="__SITE_ACCENT__" />
+
+    <title>__SITE_TITLE__</title>
+    <meta
+      name="description"
+      content="__SITE_DESCRIPTION__"
+    />
+
+    <!-- Google Fonts: Plus Jakarta Sans, Outfit & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          document.documentElement.dataset.theme = saved === "light" || saved === "dark" ? saved : document.documentElement.dataset.theme;
+        } catch (e) {
+          // Keep the default theme from site.json.
+        }
+      })();
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+

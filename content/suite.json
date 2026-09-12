@@ -1,0 +1,19 @@
+{
+  "masterLoader": {
+    "label": "MASTER LOADER",
+    "filename": "tomtamx.loader.luau",
+    "code": "loadstring(game:HttpGet(\"https://vss.pandauth.com/virtual/file/f1ad8cc7853648ed\"))()",
+    "emptyTitle": "Your next session starts here.",
+    "emptyDescription": "The universal loader will appear here once its release URL is configured.",
+    "copyLabel": "Copy master loader"
+  },
+  "community": {
+    "eyebrow": "BUILT TOGETHER",
+    "title": "Good tools. Better company.",
+    "description": "Follow development, share feedback, or find your people.",
+    "github": "https://github.com/NongTham",
+    "discord": "",
+    "githubLabel": "Follow on GitHub",
+    "discordLabel": "Join the community"
+  }
+}

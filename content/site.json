@@ -1,0 +1,112 @@
+{
+  "brand": {
+    "name": "TomTamX",
+    "creator": "TomTamX",
+    "logo": "/tomtamx-logo.png"
+  },
+  "seo": {
+    "title": "TomTamX — Roblox Script Hub",
+    "description": "Official Roblox scripts by TomTamX. Find your game and copy your script.",
+    "language": "en"
+  },
+  "appearance": {
+    "defaultTheme": "dark",
+    "accentColor": "#c4f76b",
+    "accentTextColor": "#18230a"
+  },
+  "header": {
+    "libraryLabel": "Script library",
+    "links": [
+      {
+        "label": "Get the loader",
+        "url": "#loader"
+      }
+    ]
+  },
+  "hero": {
+    "eyebrow": "YOUR NEXT LEVEL STARTS HERE",
+    "titleLine1": "Less grind.",
+    "titleLine2": "More",
+    "titleAccent": "game.",
+    "description": "Your favorite games. Scripts by TomTamX.\nFind your script and get straight to playing.",
+    "buttonLabel": "Explore script library",
+    "buttonUrl": "#catalog",
+    "creditLabel": "Engineered by"
+  },
+  "featured": {
+    "enabled": true,
+    "gameIds": [
+      "examination-hub",
+      "gakuran-hub",
+      "maclib-ui"
+    ],
+    "heading": "FROM TOMTAMX",
+    "badge": "FEATURED SCRIPT",
+    "subtitle": "PICK UP WHERE THE FUN STARTS",
+    "itemLabel": "EXPLORE",
+    "caption": "LESS WAITING. MORE POSSIBILITIES."
+  },
+  "catalog": {
+    "eyebrow": "FIND YOUR NEXT PLAY",
+    "title": "The script library",
+    "description": "Scripts published by TomTamX. Find your game, then copy your script.",
+    "pageSize": 12,
+    "searchPlaceholder": "Search for your game…",
+    "sortLabel": "Sort by",
+    "sortOption": "A–Z",
+    "allGamesLabel": "All scripts",
+    "gameSingular": "project",
+    "gamePlural": "projects",
+    "scriptSingular": "script",
+    "scriptPlural": "scripts",
+    "noScriptsLabel": "No scripts listed",
+    "noScriptsBadge": "NO SCRIPTS",
+    "availableBadge": "SCRIPT AVAILABLE",
+    "showingLabel": "Showing {shown} of {total} projects",
+    "loadMoreLabel": "Load more",
+    "emptyTitle": "No scripts found",
+    "emptyDescription": "Try adjusting your search query.",
+    "clearFiltersLabel": "Reset filters"
+  },
+  "details": {
+    "eyebrow": "SCRIPT DETAILS",
+    "emptyTitle": "No scripts available",
+    "emptyDescription": "No scripts are currently published for this project.",
+    "openGameLabel": "View Project Source",
+    "chooseScriptLabel": "Select script version",
+    "copyLabel": "Copy Loadstring",
+    "copiedLabel": "Copied to Clipboard!"
+  },
+  "footer": {
+    "creditLabel": "Crafted by",
+    "backToTopLabel": "Back to top",
+    "links": [
+      {
+        "label": "GitHub (NongTham)",
+        "url": "https://github.com/NongTham",
+        "newTab": true
+      },
+      {
+        "label": "MacLib Repository",
+        "url": "https://github.com/NongTham/Maclib",
+        "newTab": true
+      },
+      {
+        "label": "Rscripts Profile",
+        "url": "https://rscripts.net/@TomTamX",
+        "newTab": true
+      }
+    ]
+  },
+  "accessibility": {
+    "homeLabel": "Go to {name} home",
+    "navigationLabel": "Main navigation",
+    "lightThemeLabel": "Switch to light theme",
+    "darkThemeLabel": "Switch to dark theme",
+    "searchLabel": "Search scripts",
+    "clearSearchLabel": "Clear search input",
+    "sortLabel": "Sort order",
+    "viewGameLabel": "View {name}",
+    "closeDetailsLabel": "Close details dialog"
+  }
+}
