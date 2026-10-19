@@ -183,18 +183,36 @@ export async function fetchTomTamXScripts(signal) {
   // Option 1: Official Public API v1 if API key is present
   if (apiKey) {
     try {
-      const url = `${apiBase}/v1/scripts?username=${encodeURIComponent(username)}&includeScript=true&sort=newest&limit=50`;
-      const response = await fetchWithTimeout(url, signal, 8000, {
-        Authorization: `Bearer ${apiKey}`,
-        'X-Api-Key': apiKey
-      });
-      if (response.ok) {
-        const payload = await response.json();
-        if (payload.success && Array.isArray(payload.data)) {
-          const catalog = await toCatalog(payload.data, signal);
-          saveCatalogToCache(catalog);
-          return catalog;
+      const loadV1Page = async (page = 1) => {
+        const url = `${apiBase}/v1/scripts?username=${encodeURIComponent(username)}&includeScript=true&sort=newest&limit=48&page=${page}`;
+        const response = await fetchWithTimeout(url, signal, 8000, {
+          Authorization: `Bearer ${apiKey}`,
+          'X-Api-Key': apiKey
+        });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      };
+
+      const first = await loadV1Page(1);
+      if (first.success && Array.isArray(first.data)) {
+        let allData = [...first.data];
+        const totalPages = Math.min(
+          Math.max(1, Number(first.meta?.totalPages || first.meta?.pages || (first.data.length === 48 ? 2 : 1)) || 1),
+          10
+        );
+        if (totalPages > 1) {
+          const rest = await Promise.all(
+            Array.from({ length: totalPages - 1 }, (_, i) => loadV1Page(i + 2))
+          );
+          for (const res of rest) {
+            if (res.success && Array.isArray(res.data)) {
+              allData.push(...res.data);
+            }
+          }
         }
+        const catalog = await toCatalog(allData, signal);
+        saveCatalogToCache(catalog);
+        return catalog;
       }
     } catch (err) {
       console.warn('Official API query failed, falling back to public endpoint:', err.message);
