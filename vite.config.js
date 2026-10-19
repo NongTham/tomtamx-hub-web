@@ -17,7 +17,7 @@ export default defineConfig({
         ACCENT: site.appearance.accentColor,
         THEME: site.appearance.defaultTheme
       };
-      return html.replace(/__SITE_(\w+)__/g, (match, key) => escapeHtml(values[key] ?? match));
+      return html.replace(/__SITE_(\w+)__/g, (match, key) => escapeHtml(values[key] !== undefined ? values[key] : match));
     },
     handleHotUpdate({ file, server }) {
       if (/[/\\]content[/\\](site|suite)\.json$/.test(file)) {
